@@ -75,7 +75,7 @@ app.post("/generateTxnToken", function (request, res) {
     console.log("Mode 1 So Net Banking");
     paytmParams.body["enablePaymentMode"] = [
       {
-        mode: "NET_BANKING",
+        mode: "NB",
       },
     ];
   } else if (mode == "0") {
