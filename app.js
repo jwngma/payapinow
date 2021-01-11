@@ -71,18 +71,18 @@ app.post("/generateTxnToken", function (request, res) {
   console.log("Mode");
   console.log(mode);
 
-  if (mode == "1") {
-    console.log("Mode 1 So Net Banking");
-    paytmParams.body["enablePaymentMode"] = [
-      {
-        mode: "NB",
-      },
-    ];
-  } else if (mode == "0") {
+  if (mode == "0") {
     console.log("Mode 0 So BALANCE");
     paytmParams.body["enablePaymentMode"] = [
       {
         mode: "PPI",
+      },
+    ];
+  } else if (mode == "1") {
+    console.log("Mode 1 So Net Banking");
+    paytmParams.body["enablePaymentMode"] = [
+      {
+        mode: "NB",
       },
     ];
   } else if (mode == "2") {
@@ -96,12 +96,11 @@ app.post("/generateTxnToken", function (request, res) {
     console.log("Mode 3 So CC");
     paytmParams.body["enablePaymentMode"] = [
       {
-        //mode: "CREDIT_CARD",
         mode: "CC",
       },
     ];
   } else if (mode == "4") {
-    console.log("Mode 4 So CC");
+    console.log("Mode 4 So DC");
     paytmParams.body["enablePaymentMode"] = [
       {
         mode: "DC",
