@@ -82,7 +82,7 @@ app.post("/generateTxnToken", function (request, res) {
     console.log("Mode 0 So BALANCE");
     paytmParams.body["enablePaymentMode"] = [
       {
-        mode: "BALANCE",
+        mode: "PPI",
       },
     ];
   } else if (mode == "2") {
