@@ -99,6 +99,13 @@ app.post("/generateTxnToken", function (request, res) {
         mode: "CREDIT_CARD",
       },
     ];
+  } else if (mode == "4") {
+    console.log("Mode 4 So CC");
+    paytmParams.body["enablePaymentMode"] = [
+      {
+        mode: "DEBIT_CARD",
+      },
+    ];
   }
 
   console.log(JSON.stringify(paytmParams));
